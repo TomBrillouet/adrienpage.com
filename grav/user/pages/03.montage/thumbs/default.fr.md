@@ -1,0 +1,5 @@
+---
+published: false
+footer: false
+---
+

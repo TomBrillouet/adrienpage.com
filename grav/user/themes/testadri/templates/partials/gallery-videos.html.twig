@@ -1,0 +1,31 @@
+<script>
+    window.videos_galery = {{ page.header.videos_galery | json_encode | raw }};
+</script>
+<div x-data="videoGallery(window.videos_galery)" x-init="init()" class="p-6 mt-20">
+    <div class="masonry">
+        <template x-for="(video, index) in videos_galery" :key="index">
+            <div class="item relative"><img :src="Object.keys(video.thumb)[0]" alt="Thumbnail" class="cursor-pointer shadow hover:scale-105 transition-transform h-auto max-w-full" />
+                <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 text-white whitespace-normal p-[1rem] max-w-full
+ opacity-0 text-4xl hover:opacity-100 transition-opacity" x-text="video.title" @click="openLightbox(index)"></div>
+            </div>
+        </template>
+    </div>
+    <template x-if="isOpen">
+        <div class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-95 mt-0" @click="closeLightbox()">
+            <div class="relative w-full max-w-6xl mx-4 ml-16" @click.stop>
+                <button @click="closeLightbox()" class="btn btn-sm btn-circle btn-ghost absolute top-4 right-4 text-white z-50" aria-label="Fermer la lightbox">
+                    ✕
+                </button>
+                <video x-ref="videoPlayer" controls autoplay class="w-full max-h-fit bg-black">
+                    <source x-bind:src="currentVideo.src_webm && Object.values(currentVideo.src_webm)[0]?.path" type="video/webm" x-show="currentVideo.src_webm && Object.keys(currentVideo.src_webm).length > 0" />
+                    <source x-bind:src="currentVideo.src_mp4 && Object.values(currentVideo.src_mp4)[0]?.path" type="video/mp4" x-show="currentVideo.src_mp4 && Object.keys(currentVideo.src_mp4).length > 0" /> Votre navigateur ne supporte pas la vidéo.
+                </video>
+
+            </div>
+            <div class="ml-[4rem] mr-[4rem] max-w-[20rem]">
+                <p class="lightbox-title" x-text="currentVideo.title"></p>
+                <p class="lightbox-desc" x-text="currentVideo.desc"></p>
+            </div>
+        </div>
+    </template>
+</div>

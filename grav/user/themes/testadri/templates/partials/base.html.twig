@@ -1,0 +1,65 @@
+{% set extension = config.theme.production ? '.min' : '' %}
+<!DOCTYPE html>
+<html lang="{{ (grav.language.getActive ?: grav.config.site.default_lang)|e }}">
+<head>
+    {% block head %}
+        <meta charset="utf-8" />
+        <title>{% if header.title %}{{ header.title|e }} | {% endif %}{{ site.title|e }}</title>
+
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        {% include 'partials/metadata.html.twig' %}
+
+        <link rel="canonical" href="{{ page.url(true, true)|e }}" />
+    {% endblock head %}
+
+    {% block stylesheets %}
+        {% do assets.addCss('theme://dist/css/site' ~ extension ~ '.css', 98) %}
+    {% endblock %}
+
+    {% block assets deferred %}
+        {{ assets.css()|raw }}
+        {{ assets.js()|raw }}
+        <script src="{{ url('theme://js/vendor/alpine.js') }}" defer></script>
+        <script type="module" src="{{ url('theme://js/main' ~ extension ~ '.js') }}"></script>
+    {% endblock %}
+
+</head>
+<body id="top">
+
+{% block header %}
+    <header class="p-[2vh] pb-0 mt-[4vh] pl-8 relative z-[1]">
+        <div>
+            <a class="logo" href="{{ home_url|e }}">{{ config.site.title|e }}</a>
+        </div>
+        
+        {% block header_navigation %}
+            <nav class="main-nav">
+                {% include 'partials/navigation.html.twig' %}
+            </nav>
+        {% endblock %}
+    </header>
+{% endblock %}
+
+{% block main %}{% endblock %}
+
+{% block footer %}
+    <footer class="absolute flex flex-col items-center justify-center gap-[1em] w-full min-h-[5rem] footer-base">
+        <div>
+            {% for page in pages.children %}
+                {% if page.header.footer == true %}
+                    <a href="{{ page.url }}">{{ page.title }}</a>
+                {% endif %}
+            {% endfor %}
+            <a href="{{ url('presentation#contact') }}">Contactez-moi</a>
+        </div>
+        <p>© 2020–{{ "now"|date("Y") }} Adrien Page. Tous droits réservés.</p>
+    </footer>
+{% endblock %}
+
+{% block bottom %}
+    {{ assets.js('bottom')|raw }}
+{% endblock %}
+
+</body>
+</html>

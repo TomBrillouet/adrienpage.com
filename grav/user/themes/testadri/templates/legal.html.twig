@@ -1,0 +1,24 @@
+{% extends 'partials/base.html.twig' %}
+{% block main %}
+    <main class="main-base">
+        <section id="legal">
+            <div id="title"><h1>{{ page.title }}</h1></div>
+            {{ page.content|raw }}
+            <br>
+            <h3>Création du site</h3>
+            <p>
+                Développement : Codicoda<br>
+                Adresse : 52b route de Strasbourg, 67960 Entzheim, France<br>
+                Site web : <a href="https://www.codicoda.fr" target="_blank">codicoda.fr</a><br>
+                <em>Le développeur n’est pas responsable du contenu éditorial.</em>
+            </p>
+            <br>
+            <h3>Hébergement</h3>
+            <p>
+                Hébergeur : Alwaysdata<br>
+                91 rue du Faubourg Saint Honoré - 75008 Paris<br>
+                Site web : <a href="https://www.alwaysdata.com" target="_blank">alwaysdata.com</a>
+            </p>
+        </section>
+    </main>
+{% endblock %}

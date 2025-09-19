@@ -1,0 +1,262 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Brunson";
+  src: url("../../fonts/brunson.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  z-index: 1;
+  color: #ffffffe1;
+  background-color: #121212 ;
+  font-family: "Brunson";
+}
+
+video#bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
+  filter: blur(10px);
+}
+
+header {
+  font-size: 2rem;
+  letter-spacing: .05em;
+}
+
+.header-video {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  z-index: 1;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 2rem;
+}
+
+.video-base video {
+  height: 100vh;
+  width: 100vw;
+  object-fit: cover;
+}
+
+.video-base h1 {
+  letter-spacing: .5rem;
+  font-size: 4rem;
+}
+
+.video-base svg {
+  position: absolute;
+}
+
+.video-base .main-title {
+  top: 50vh;
+  left: 50vw;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.video-base .main-title p, .main-base {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+div > a.logo {
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+
+div > a.logo:hover {
+  transform: scale(.95);
+}
+
+nav.home-nav {
+  font-size: 2rem;
+  letter-spacing: 0.05em;
+  line-height: 5vh;
+}
+
+nav.home-nav li a {
+  transition: color 0.2s ease, background-color 0.2s ease;
+  padding: 0 0.5em;
+  border-radius: 2px;
+}
+
+nav.home-nav li a:hover {
+  color: #121212;
+  background-color: #ffffffe1;
+}
+
+nav.main-nav {
+  font-size: 1.5rem;  
+  letter-spacing: .05em;
+  line-height: normal;
+}
+
+nav.main-nav li a {
+  transition: color 0.2s ease, background-color 0.2s ease;
+  padding: .5rem 1rem;
+  border-radius: 2px;
+}
+
+nav.main-nav li a:hover, nav ul li a.active {
+  color: #121212;
+  background-color: #ffffffe1;
+}
+
+nav.main-nav ul {
+  border-color:#ADADAD;
+}
+
+.main-base {
+  margin: 7rem 5rem 2rem;
+}
+
+footer {
+  letter-spacing: .05em;
+  line-height: normal;
+}
+
+.footer-base {
+  border-top: 1px solid #ADADAD;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem 1rem;
+}
+
+.footer-base div{
+  display: flex;
+  gap: 2em;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+footer p {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  align-self: center;
+  text-align: center;
+}
+
+#legal, #privacy-policy, #presentation {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#legal a, #privacy-policy a, #presentation a  {
+  color: cyan;
+}
+
+div#title {
+  text-align: center;
+  font-size: 4rem;
+  margin-bottom: 3rem;
+  font-family: 'Brunson';
+  letter-spacing: .1rem;
+}
+
+.main-title h1 {
+  opacity: 0;
+  transform: translateX(150px);
+  transition: opacity .8s ease, transform .8s ease;
+}
+
+.main-title p {
+  opacity: 0;
+  transform: translateX(-150px);
+  transition: opacity .8s ease, transform .8s ease;
+}
+
+.main-title h1.visible, .main-title p.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.main-base h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.overlay-menu {
+  display: none ;
+}
+
+.lightbox-title {
+  font-size: 2rem;
+  letter-spacing: .2rem;
+}
+
+.lightbox-desc, .contact{
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.masonry {
+	column-count: 3;
+	column-gap: 1em;
+}
+
+.item {
+  display: inline-block;
+  width: 100%;
+  box-sizing: border-box;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity .8s ease, transform .8s ease;
+}
+
+.item.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.item img{width:100%;}
+
+@media (min-width: 768px) {
+  .header-video {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 2vh 2rem 0 2rem;
+  }
+  footer.footer-base {
+    flex-direction: column;
+    justify-content: center;
+  }
+  .video-base h1 {
+    font-size: 9rem;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .masonry {
+    column-count: 1;
+	}
+}
+@media only screen and (min-width: 321px) and (max-width: 768px){
+  .masonry {
+    column-count: 2;
+	}
+
+  .main-base {
+    margin: 5rem 2rem 2rem;
+  } 
+}
+@media only screen and (min-width: 769px) and (max-width: 1200px){
+  .masonry {
+    column-count: 2;
+	}
+}
+@media only screen and (min-width: 1201px) {
+  .masonry {
+    column-count: 3;
+	}
+}

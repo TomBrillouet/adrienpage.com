@@ -1,0 +1,85 @@
+{% set extension = config.theme.production ? '.min' : '' %}
+<!DOCTYPE html>
+<html lang="{{ (grav.language.getActive ?: grav.config.site.default_lang)|e }}">
+<head>
+    {% block head %}
+        <meta charset="utf-8" />
+        <title>{% if header.title %}{{ header.title|e }} | {% endif %}{{ site.title|e }}</title>
+
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        {% include 'partials/metadata.html.twig' %}
+
+        <link rel="canonical" href="{{ page.url(true, true)|e }}" />
+    {% endblock head %}
+
+    {% block stylesheets %}
+        {% do assets.addCss('theme://dist/css/site' ~ extension ~ '.css', 98) %}
+    {% endblock %}
+
+    {% block assets deferred %}
+        {{ assets.css()|raw }}
+        <script type="module" src="{{ url('theme://js/gallery' ~ extension ~ '.js') }}"></script>
+        <script src="{{ url('theme://js/vendor/alpine.js') }}" defer></script>
+        <script type="module" src="{{ url('theme://js/main' ~ extension ~ '.js') }}"></script>
+
+        
+    {% endblock %}
+
+</head>
+<body id="top">
+{% block header %}
+    <header class="header-video p-[2vh] pb-0 mt-[4vh] pl-8">
+        <div>
+            <a class="logo" href="{{ home_url|e }}">{{ config.site.title|e }}</a>
+        </div>
+        {% block header_navigation %}
+            <nav class="main-nav">
+            {% import 'macros/macros.html.twig' as macros %}
+                <ul class="flex flex-row justify-center mt-12 gap-[1rem] flex-wrap pb-[1rem] border-b">
+                {{ macros.nav_loop(pages) }}
+                </ul>
+            </nav>
+        {% endblock %}
+    </header>
+{% endblock %}
+{% block main %}
+        <main class="video-base">
+
+        <div class="absolute main-title">           
+                <h1 class="text-9xl">{{ page.title }}</h1>
+                <p>{{ page.header.catchphrase }}</p>
+                <svg xmlns="http://www.w3.org/2000/svg" class="animate-bounce justify-self-center mt-16" viewBox="0 0 24 24" width="50" height="50" class="text-white animate-bounce" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 4v16m0 0l-4-4m4 4l4-4"></path>
+  </svg>
+        </div>
+        {% if page.header.videos_mp4 or page.header.videos_webm %}
+            <video autoplay muted loop>
+                {% for video in page.header.videos_webm %}
+                    <source src="{{ video.path }}" type="video/webm">
+                {% endfor %}
+                {% for video in page.header.videos_mp4 %}
+                    <source src="{{ video.path }}" type="video/mp4">
+                {% endfor %}
+                Vidéo non supportée par le navigateur.
+            </video>
+        {% endif %}
+        {% include 'partials/gallery-videos.html.twig' %}
+        </main>
+{% endblock %}
+{% block footer %}
+    <footer class="absolute flex flex-col items-center justify-center gap-[1em] w-full min-h-[5rem] footer-base">
+        <div>
+            {% for page in pages.children %}
+                {% if page.header.footer == true %}
+                    <a href="{{ page.url }}">{{ page.title }}</a>
+                {% endif %}
+            {% endfor %}
+            <a href="{{ url('presentation#contact') }}">Contactez-moi</a>
+        </div>
+        <p>© 2020–{{ "now"|date("Y") }} Adrien Page. Tous droits réservés.</p>
+    </footer>
+{% endblock %}
+
+</body>
+</html>

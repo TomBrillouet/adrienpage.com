@@ -1,0 +1,9 @@
+{% extends 'partials/base.html.twig' %}
+
+{% block main %}
+        <main class="main-base">
+                <h1 class="text-5xl">{{ page.title }}</h1>
+                <div class="mt-16">{{ page.content|raw }}</div>
+                {% include 'partials/gallery-photo.html.twig' %}
+        </main>
+{% endblock %}
