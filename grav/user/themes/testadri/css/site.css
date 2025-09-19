@@ -227,10 +227,7 @@ div#title {
     justify-content: space-between;
     padding: 2vh 2rem 0 2rem;
   }
-  footer.footer-base {
-    flex-direction: column;
-    justify-content: center;
-  }
+
   .video-base h1 {
     font-size: 9rem;
   }
@@ -245,6 +242,15 @@ div#title {
   .masonry {
     column-count: 2;
 	}
+
+  .footer-base {
+    gap: 2rem;
+  }
+
+  .footer-base div {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 
   .main-base {
     margin: 5rem 2rem 2rem;
