@@ -29,9 +29,9 @@
 
 {% block header %}
     <header class="header p-[2vh] pb-0 mt-[4vh] pl-8">
-            <div>
+            <h1 class="whitespace-nowrap">
                 <a class="logo" href="{{ home_url|e }}">{{ config.site.title|e }}</a>
-            </div>
+            </h1>
             {% block header_navigation %}
                 <nav class="home-nav">
                     {% import 'macros/macros.html.twig' as macros %}
