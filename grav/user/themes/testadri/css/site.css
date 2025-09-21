@@ -180,19 +180,19 @@ div#title {
   font-size: 4rem;
 }
 
-.main-title h1 {
+.main-title h1, form {
   opacity: 0;
   transform: translateX(150px);
   transition: opacity .8s ease, transform .8s ease;
 }
 
-.main-title p {
+.main-title p, #contact {
   opacity: 0;
   transform: translateX(-150px);
   transition: opacity .8s ease, transform .8s ease;
 }
 
-.main-title h1.visible, .main-title p.visible {
+.main-title h1.visible, .main-title p.visible, form.visible, #contact.visible {
   opacity: 1;
   transform: translateX(0);
 }
@@ -242,6 +242,11 @@ div#title {
     justify-content: space-between;
     padding: 2vh 2rem 0 2rem;
   }
+  .main-header {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 2vh 2rem 0;
+  }
   footer.footer-base {
     flex-direction: column;
     justify-content: center;
@@ -263,7 +268,13 @@ div#title {
 
   .main-base {
     margin: 5rem 2rem 2rem;
-  } 
+  }
+
+  .footer-base div {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 }
 @media only screen and (min-width: 769px) and (max-width: 1200px){
   .masonry {
