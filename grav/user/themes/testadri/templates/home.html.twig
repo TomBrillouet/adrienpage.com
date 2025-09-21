@@ -29,13 +29,13 @@
 
 {% block header %}
     <header class="header p-[2vh] pb-0 mt-[4vh] pl-8">
-            <h1 class="whitespace-nowrap">
+            <div>
                 <a class="logo" href="{{ home_url|e }}">{{ config.site.title|e }}</a>
-            </h1>
+            </div>
             {% block header_navigation %}
                 <nav class="home-nav">
                     {% import 'macros/macros.html.twig' as macros %}
-                    <ul class="flex flex-col gap-[10vh] text-right">
+                    <ul class="hidden lg:flex flex-col gap-[10vh] text-right mt-[-1em]">
                         {{ macros.nav_loop(pages) }}
                     </ul>
                 </nav>
@@ -57,13 +57,13 @@
             </video>
         {% endif %}
 
-        <div class="absolute pl-16 bottom-[0rem] 2xl:text-7xl tracking-[0.07em] text-5xl bottom-[5vh]">
+        <div class="lg:visible invisible absolute pl-16 bottom-[0rem] 2xl:text-7xl tracking-[0.07em] bottom-[5vh] welcome">
             <p>Bienvenue <br>sur mon portfolio</p>
         </div>
     </main>
 {% endblock %}
 {% block footer %}
-    <footer class="fixed bottom-[0rem] flex justify-center w-full items-center min-h-[3rem]">
+    <footer class="lg:visible invisible fixed bottom-[0rem] flex justify-center w-full items-center min-h-[3rem]">
         <div class="flex gap-[1em]">
             {% for page in pages.children %}
                 {% if page.header.footer == true %}
