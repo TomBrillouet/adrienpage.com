@@ -28,18 +28,38 @@
 <body id="top">
 
 {% block header %}
-    <header class="header p-[2vh] pb-0 mt-[4vh] pl-8">
+    <header class="header p-[2vh] pb-0 mt-[4vh] pl-8 home-header">
             <div>
                 <a class="logo" href="{{ home_url|e }}">{{ config.site.title|e }}</a>
             </div>
             {% block header_navigation %}
                 <nav class="home-nav">
                     {% import 'macros/macros.html.twig' as macros %}
-                    <ul class="hidden lg:flex flex-col gap-[10vh] text-right mt-[-1em]">
+                    <ul class="flex flex-col gap-[10vh] text-right mt-[-1em]">
                         {{ macros.nav_loop(pages) }}
                     </ul>
                 </nav>
             {% endblock %}
+            <button id="burger"
+            class="md:hidden w-10 h-10 grid place-items-center rounded"
+            aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu-overlay">
+      <span class="block w-6 h-[2px] bg-white transition"></span>
+      <span class="block w-6 h-[2px] bg-white transition -mt-[6px]"></span>
+      <span class="block w-6 h-[2px] bg-white transition -mt-[6px]"></span>
+    </button>
+    
+    <div id="menu-overlay"
+         class="fixed inset-0 z-[50] hidden md:hidden bg-black"
+         aria-hidden="true">
+      <button id="overlay-close"
+              class="absolute top-4 right-4 text-white text-3xl"
+              aria-label="Fermer le menu">×</button>
+      <nav class="h-full w-full flex items-center justify-center">
+        <ul class="flex flex-col items-center gap-6 text-white text-2xl">
+          {% include 'partials/navigation.html.twig' %}
+        </ul>
+      </nav>
+    </div>
     </header>
 {% endblock %}
 
@@ -57,13 +77,13 @@
             </video>
         {% endif %}
 
-        <div class="lg:visible invisible absolute pl-16 bottom-[0rem] 2xl:text-7xl tracking-[0.07em] bottom-[5vh] welcome">
+        <div class=" absolute pl-16 bottom-[0rem] 2xl:text-7xl tracking-[0.07em] bottom-[5vh] welcome">
             <p>Bienvenue <br>sur mon portfolio</p>
         </div>
     </main>
 {% endblock %}
 {% block footer %}
-    <footer class="lg:visible invisible fixed bottom-[0rem] flex justify-center w-full items-center min-h-[3rem]">
+    <footer class=" fixed bottom-[0rem] flex justify-center w-full items-center min-h-[3rem]">
         <div class="flex gap-[1em]">
             {% for page in pages.children %}
                 {% if page.header.footer == true %}
