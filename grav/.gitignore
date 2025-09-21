@@ -21,6 +21,8 @@ user/accounts/*
 !user/accounts/.*
 user/data/*
 !user/data/.*
+user/pages/*/thumbs/*
+user/pages/*/videos/*
 user/**/config/security.yaml
 
 # Environments
