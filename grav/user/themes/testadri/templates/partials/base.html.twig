@@ -27,17 +27,35 @@
 </head>
 <body id="top">
 
-{% block header %}
+    {% block header %}
     <header class="pb-0 mt-[4vh] p-8 relative z-[1] flex flex-col gap-[1rem] items-center main-header">
         <div class="whitespace-nowrap">
             <a class="logo" href="{{ home_url|e }}">{{ config.site.title|e }}</a>
         </div>
         
-        {% block header_navigation %}
             <nav class="main-nav">
                 {% include 'partials/navigation.html.twig' %}
             </nav>
-        {% endblock %}
+<button id="burger"
+        class="md:hidden w-10 h-10 grid place-items-center rounded"
+        aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu-overlay">
+  <span class="block w-6 h-[2px] bg-white transition"></span>
+  <span class="block w-6 h-[2px] bg-white transition -mt-[6px]"></span>
+  <span class="block w-6 h-[2px] bg-white transition -mt-[6px]"></span>
+</button>
+
+<div id="menu-overlay"
+     class="fixed inset-0 z-[50] hidden md:hidden bg-black"
+     aria-hidden="true">
+  <button id="overlay-close"
+          class="absolute top-4 right-4 text-white text-3xl"
+          aria-label="Fermer le menu">×</button>
+  <nav class="h-full w-full flex items-center justify-center">
+    <ul class="flex flex-col items-center gap-6 text-white text-2xl">
+      {% include 'partials/navigation.html.twig' %}
+    </ul>
+  </nav>
+</div>
     </header>
 {% endblock %}
 

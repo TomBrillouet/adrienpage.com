@@ -25,7 +25,7 @@ window.videoGallery = function(videos) {
 };
 
 document.addEventListener("DOMContentLoaded", () => {
-  const items = document.querySelectorAll(".item.relative, .main-title h1, .main-title p");
+  const items = document.querySelectorAll(".item.relative, .main-title h1, .main-title p, .title-galery");
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) { entry.target.classList.add("visible"); observer.unobserve(entry.target); }
