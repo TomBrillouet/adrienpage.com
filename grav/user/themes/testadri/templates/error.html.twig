@@ -3,7 +3,7 @@
 {% block main %}
         <main class="main-base">
                 <div class="text-center mt-16">
-                    <h1 class="text-9xl">Erreur {{ page.header.http_response_code ?: 404 }}</h1>
+                    <h1 class="text-9xl errorfont">Erreur {{ page.header.http_response_code ?: 404 }}</h1>
                     <div class="font-sans font-bold">{{ page.content|raw }}</div>
                 </div>
         </main>

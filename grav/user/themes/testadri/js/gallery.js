@@ -1,16 +1,12 @@
-window.videoGallery = function(videos_galery) {
+window.videoGallery = function(videos) {
   return {
     isOpen: false,
     currentVideo: {},
-    videos: videos_galery,
+    videos: videos || [],
     openLightbox(index) {
-      this.currentVideo = this.videos[index];
+      this.currentVideo = this.videos[index] || {};
       this.isOpen = true;
-      this.$nextTick(() => {
-        if (this.$refs.videoPlayer) {
-          this.$refs.videoPlayer.play();
-        }
-      });
+      this.$nextTick(() => { if (this.$refs.videoPlayer) this.$refs.videoPlayer.play(); });
     },
     closeLightbox() {
       if (this.$refs.videoPlayer) {
@@ -22,26 +18,18 @@ window.videoGallery = function(videos_galery) {
     },
     init() {
       window.addEventListener('keydown', (event) => {
-        if (this.isOpen && event.key === "Escape") {
-          this.closeLightbox();
-        }
+        if (this.isOpen && event.key === "Escape") this.closeLightbox();
       });
     }
   }
-}
+};
 
 document.addEventListener("DOMContentLoaded", () => {
   const items = document.querySelectorAll(".item.relative, .main-title h1, .main-title p");
-
   const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-          if (entry.isIntersecting) {
-              entry.target.classList.add("visible");
-              observer.unobserve(entry.target);
-          }
-      });
-  }, { threshold: 0});
-
+    entries.forEach(entry => {
+      if (entry.isIntersecting) { entry.target.classList.add("visible"); observer.unobserve(entry.target); }
+    });
+  }, { threshold: 0 });
   items.forEach(item => observer.observe(item));
 });
-;

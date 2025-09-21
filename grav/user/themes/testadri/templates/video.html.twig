@@ -64,8 +64,15 @@
                 Vidéo non supportée par le navigateur.
             </video>
         {% endif %}
-        {% include 'partials/gallery-videos.html.twig' %}
-        </main>
+        <h3 class="title-galery">{{ header.galerie_1_title }}</h3>
+        {% include 'partials/gallery-videos.html.twig' with { videos: header.videos_galery_1, gid: 'g1' } %}
+        
+        <h3 class="title-galery">{{ header.galerie_2_title }}</h3>
+        {% include 'partials/gallery-videos.html.twig' with { videos: header.videos_galery_2, gid: 'g2' } %}
+        
+        <h3 class="title-galery">{{ header.galerie_3_title }}</h3>
+        {% include 'partials/gallery-videos.html.twig' with { videos: header.videos_galery_3, gid: 'g3' } %}
+                </main>
 {% endblock %}
 {% block footer %}
     <footer class="absolute flex flex-col items-center justify-center gap-[1em] w-full min-h-[5rem] footer-base">

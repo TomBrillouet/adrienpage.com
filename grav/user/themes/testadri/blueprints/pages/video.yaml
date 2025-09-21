@@ -40,7 +40,7 @@ form:
               multiple: false
               accept:
                 - video/webm
-              help: La vidéo en .WebM sera lue par le navigateur en priorité s'il est compatible, sinon il lira le .mp4
+              help: Pour les performances, la vidéo en .WebM sera lue par le navigateur en priorité s'il est compatible, sinon il lira le .mp4
 
             header.videos_mp4:
               type: file
@@ -50,28 +50,33 @@ form:
               multiple: false
               accept: 
                 - video/mp4
-              help: La vidéo en .WebM sera lue par le navigateur en priorité s'il est compatible, sinon il lira le .mp4
+              help: Pour les performances, la vidéo en .WebM sera lue par le navigateur en priorité s'il est compatible, sinon il lira le .mp4
 
         media:
           type: tab
           title: Galerie
 
           fields:
-            header.videos_galery:
-              name: videos_galery
+          
+            header.galerie_1_title:
+              type: text
+              label: Titre affiché pour la galerie 1
+
+            header.videos_galery_1:
+              name: videos_galery_1
               type: list
               style: vertical
-              label: Liste des vidéos de la galerie. L'affichage des images se fera dans un ordre de droite à gauche, colonne par colonne.
+              label: Galerie 1
               validate:
                 type: array
-              fields:
+              fields: &gallery_fields
                 .src_webm:
                   type: file
                   label: Choisir une vidéo .webm
                   destination: 'self@/videos/galerie/'
                   accept:
                     - video/webm  
-                  help: La vidéo en .WebM sera lue par le navigateur en priorité s'il est compatible, sinon il lira le .mp4.
+                  help: Pour les performances, la vidéo en .WebM sera lue par le navigateur en priorité s'il est compatible, sinon il lira le .mp4.
 
                 .src_mp4:
                   type: file
@@ -79,7 +84,7 @@ form:
                   destination: 'self@/videos/galerie/'
                   accept:
                     - video/mp4  
-                  help: La vidéo en .WebM sera lue par le navigateur en priorité s'il est compatible, sinon il lira le .mp4
+                  help: Pour les performances, la vidéo en .WebM sera lue par le navigateur en priorité s'il est compatible, sinon il lira le .mp4
                 
                 .thumb:
                   type: file
@@ -95,6 +100,32 @@ form:
                 .desc:
                   type: textarea
                   label: Description de la vidéo
+
+            header.galerie_2_title:
+              type: text
+              label: Titre affiché pour la galerie 2
+
+            header.videos_galery_2:
+              name: videos_galery_2
+              type: list
+              style: vertical
+              label: Galerie 2
+              validate:
+                type: array
+              fields: *gallery_fields
+
+            header.galerie_3_title:
+              type: text
+              label: Titre affiché pour la galerie 3
+
+            header.videos_galery_3:
+              name: videos_galery_3
+              type: list
+              style: vertical
+              label: Galerie 3
+              validate:
+                type: array
+              fields: *gallery_fields
 
         options:
           type: tab
