@@ -42,4 +42,30 @@ document.addEventListener('keydown', e => {
   if (e.key === 'Escape') closeMenu();
 });
 
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll("#menu-overlay ul").forEach(ul => {
+    ul.querySelectorAll("li a").forEach((a, i) => {
+      a.style.setProperty("--i", i);
+    });
+  });
+
+  const items = document.querySelectorAll(
+    ".item.relative, .main-title h1, .main-title p, form, #contact, .title-galery, #menu-overlay li a"
+  );
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+      } else {
+        entry.target.classList.remove("visible");
+      }
+    });
+  }, { threshold: 0 });
+
+  items.forEach(item => observer.observe(item));
+});
+
+
+
 
