@@ -17,4 +17,4 @@ RUN pecl install apcu yaml redis memcached  && docker-php-ext-enable apcu yaml r
 RUN a2enmod rewrite
 COPY apache.conf /etc/apache2/sites-available/000-default.conf
 
-WORKDIR /application/testadri.com/grav
+WORKDIR /application/testadri.com/
