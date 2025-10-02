@@ -39,6 +39,7 @@ form:
             to: 'tom.brillouet@outlook.fr'
             subject: '[Contact du site]'
             body: "{% include 'forms/data.html.twig' %}"
+            debug: true
         - message: "Merci pour votre message !"
         - display: thankyou
 ---
