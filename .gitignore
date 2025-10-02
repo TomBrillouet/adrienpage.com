@@ -23,6 +23,7 @@ user/data/*
 !user/data/.*
 user/pages/*/thumbs/*
 user/pages/*/videos/*
+user/pages/*/*.md
 user/**/config/security.yaml
 
 # Environments
