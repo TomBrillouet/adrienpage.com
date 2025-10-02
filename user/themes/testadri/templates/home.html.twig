@@ -54,10 +54,9 @@
       <button id="overlay-close"
               class="absolute top-4 right-4 text-white text-6xl"
               aria-label="Fermer le menu">×</button>
-      <nav class="h-full w-full flex items-center justify-center">
-        <ul class="flex flex-col items-center gap-6 text-white text-2xl">
-        {% import 'macros/macros.html.twig' as macros %}
-          <ul class="flex flex-col justify-center mt-12 gap-[5rem] flex-wrap pb-[1rem] border-b items-center border-none">
+  <nav class="h-full w-full flex items-center justify-center overflow-y-auto">
+    {% import 'macros/macros.html.twig' as macros %}
+      <ul class="flex flex-col md:grid md:grid-cols-2 gap-16 m-12 pb-4 text-3xl overflow-y-auto overflow-x-hidden">
     {{ macros.nav_loop(pages) }}
 </ul>
         </ul>
@@ -69,7 +68,7 @@
 {% block main %}
     <main>
         {% if page.header.videos_mp4 or page.header.videos_webm %}
-            <video id="bg-video" autoplay muted loop>
+            <video id="bg-video" autoplay muted loop playsinline>
                 {% for video in page.header.videos_webm %}
                     <source src="{{ video.path }}" type="video/webm">
                 {% endfor %}
@@ -80,7 +79,7 @@
             </video>
         {% endif %}
 
-        <div class=" absolute pl-16 bottom-[0rem] 2xl:text-7xl tracking-[0.07em] bottom-[5vh] welcome">
+        <div class=" absolute lg:pl-16 pl-8 bottom-[0rem] 2xl:text-7xl tracking-[0.07em] bottom-[5vh] welcome">
             <p>Bienvenue <br>sur mon portfolio</p>
         </div>
     </main>
