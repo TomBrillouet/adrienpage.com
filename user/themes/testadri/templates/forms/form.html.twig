@@ -1,0 +1,33 @@
+<form name="{{ form.name }}"
+      method="{{ form.method|default('POST') }}"
+      action="{{ form.action ?: page.url }}"
+      class="mx-auto mt-16 max-w-xl sm:mt-20">
+
+  <div class="flex flex-col gap-y-4">
+    {% for field in form.fields %}
+      {% set tpl = "forms/fields/#{field.type}/#{field.type}.html.twig" %}
+      {% include tpl with { field: field, value: form.value(field.name) } %}
+    {% endfor %}
+  </div>
+
+  <div class="mt-10 sm:col-span-2">
+    {% for button in form.buttons %}
+      <button type="{{ button.type|default('submit') }}"
+              class="block w-full rounded-md bg-indigo-500 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500">
+        {{ button.value }}
+      </button>
+    {% endfor %}
+  </div>
+
+  {{ form.token }}
+  <input type="hidden" name="__form-name__" value="{{ form.name }}">
+</form>
+
+{% if form.message %}
+  <div class="mt-6 text-green-500 text-center">{{ form.message }}</div>
+{% endif %}
+{% if form.errors %}
+  <div class="mt-6 text-red-500 text-center">
+    <ul>{% for field, error in form.errors %}<li>{{ error }}</li>{% endfor %}</ul>
+  </div>
+{% endif %}

@@ -4,34 +4,34 @@ template: contact
 form:
     name: contact-form
     fields:
-        - name: first-name
+        - name: Prénom
           type: text
           validate:
             required: true
-        - name: last-name
+        - name: Nom
           type: text
           validate:
             required: true
-        - name: sujet
+        - name: Objet
           type: text
           validate:
             required: true
-        - name: email
+        - name: Email
           type: email
           validate:
             required: true
-        - name: message
+        - name: Message
           type: textarea
           validate:
             required: true
         - name: agree-to-policies
           type: checkbox
-          label: Politique de confidentialité
+          label: Je reconnais avoir lu la politique de confidentialité
           validate:
             required: true
     buttons:
         - type: submit
-          value: Envoyer
+          value: Et hop, envoyez !
     process:
         - email:
             from: 'no-reply@adrienpage.com'
