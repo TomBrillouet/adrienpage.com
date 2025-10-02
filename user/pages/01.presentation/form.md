@@ -34,7 +34,8 @@ form:
           value: Envoyer
     process:
         - email:
-            from: '{{ form.value.email }}'
+            from: 'no-reply@adrienpage.com'
+            reply_to: '{{ form.value.email }}'
             to: 'tom.brillouet@outlook.fr'
             subject: '[Contact du site]'
             body: "{% include 'forms/data.html.twig' %}"
