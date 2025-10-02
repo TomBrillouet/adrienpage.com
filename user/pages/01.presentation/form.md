@@ -1,47 +1,52 @@
 ---
-title: Presentation
-template: contact
-form:
-    name: contact-form
-    fields:
-        - name: Prénom
-          type: text
-          validate:
-            required: true
-        - name: Nom
-          type: text
-          validate:
-            required: true
-        - name: Objet
-          type: text
-          validate:
-            required: true
-        - name: Email
-          type: email
-          validate:
-            required: true
-        - name: Message
-          type: textarea
-          validate:
-            required: true
-        - name: agree-to-policies
-          type: checkbox
-          label: Je reconnais avoir lu la politique de confidentialité
-          validate:
-            required: true
-    buttons:
-        - type: submit
-          value: Et hop, envoyez !
-    process:
-        - email:
-            from: 'no-reply@adrienpage.com'
-            reply_to: '{{ form.value.email }}'
-            to: 'tom.brillouet@outlook.fr'
-            subject: '[Contact du site]'
-            body: "{% include 'forms/data.html.twig' %}"
-            debug: true
-        - message: "Merci pour votre message !"
-        - display: thankyou
+title: Presentation 
+template: contact 
+form: 
+  name: contact-form
+  fields:
+    - name: prenom
+      label: Prénom
+      type: text
+      validate:
+        required: true
+    - name: nom
+      label: Nom
+      type: text
+      validate:
+        required: true
+    - name: objet
+      label: Objet
+      type: text
+      validate:
+        required: true
+    - name: email
+      label: Email
+      type: email
+      validate:
+        required: true
+    - name: message
+      label: Message
+      type: textarea
+      validate:
+        required: true
+    - name: agree_to_policies
+      type: checkbox
+      label: Je reconnais avoir lu la politique de confidentialité
+      validate:
+        required: true
+  buttons:
+    - type: submit
+      value: Et hop, envoyez !
+  process:
+    - email:
+        from: 'no-reply@adrienpage.com'
+        reply_to: '{{ form.value.email }}'
+        to: 'tom.brillouet@outlook.fr'
+        subject: '[Contact du site]'
+        body: "{% include 'forms/data.html.twig' %}"
+        debug: true
+    - message: "Merci pour votre message !"
+    - display: thankyou
 ---
 
 ### Test titre
