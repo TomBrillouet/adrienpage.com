@@ -48,7 +48,7 @@ pages:
   publish_dates: true
   process:
     markdown: true
-    twig: false
+    twig: true
   twig_first: false
   never_cache_twig: false
   events:
@@ -195,7 +195,7 @@ media:
   unsupported_inline_types: null
   allowed_fallback_types: null
   auto_metadata_exif: false
-  upload_limit: 104857600
+  upload_limit: 2097152
 session:
   enabled: true
   initialize: true

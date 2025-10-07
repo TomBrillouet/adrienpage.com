@@ -1,6 +1,6 @@
 ---
-title: Presentation 
-template: contact 
+title: Presentation
+template: contact
 form: 
   name: contact-form
   fields:
@@ -45,6 +45,7 @@ form:
         subject: '[Contact du site]'
         body: "{% include 'forms/data.html.twig' %}"
         debug: true
+        process_markdown: true
     - message: "Merci pour votre message !"
     - display: thankyou
 ---

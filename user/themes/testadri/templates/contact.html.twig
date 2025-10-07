@@ -17,19 +17,6 @@
             <h2 class="text-balance text-4xl font-semibold tracking-tight text-white sm:text-5xl">Contactez-moi</h2>
             <p class="mt-2 text-lg/8 text-gray-400">Texte à adapter si besoin.</p>
         </div>
-
-        {% if form.message %}
-            <div class="mt-6 text-green-500 text-center">{{ form.message }}</div>
-        {% endif %}
-        {% if form.errors %}
-            <div class="mt-6 text-red-500 text-center">
-                <ul>
-                    {% for field, error in form.errors %}
-                        <li>{{ error }}</li>
-                    {% endfor %}
-                </ul>
-            </div>
-        {% endif %}
         {% include "forms/form.html.twig" with { form: forms('contact-form') } %}
     </div>
 </main>

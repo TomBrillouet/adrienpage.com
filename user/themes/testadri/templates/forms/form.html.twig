@@ -21,13 +21,9 @@
 
   {{ form.token }}
   <input type="hidden" name="__form-name__" value="{{ form.name }}">
+  <input type="hidden" name="__unique_form_id__" value="{{ form.uniqueid }}">
+  {{ nonce_field('form', 'form-nonce')|raw }}
 </form>
 
-{% if form.message %}
-  <div class="mt-6 text-green-500 text-center">{{ form.message }}</div>
-{% endif %}
-{% if form.errors %}
-  <div class="mt-6 text-red-500 text-center">
-    <ul>{% for field, error in form.errors %}<li>{{ error }}</li>{% endfor %}</ul>
-  </div>
-{% endif %}
+{% include 'partials/form-messages.html.twig' with { form: form } %}
+

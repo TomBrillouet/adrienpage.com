@@ -12,7 +12,7 @@ mailer:
   sendmail:
     bin: '/usr/sbin/sendmail -bs'
 content_type: text/html
-debug: false
+debug: true
 cc: null
 bcc: null
 reply_to: null
