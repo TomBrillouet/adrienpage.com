@@ -1,14 +1,14 @@
 enabled: true
-from: tom.brillouet@outlook.fr
-to: tom.brillouet@outlook.fr
+from: no-reply@adrienpage.com
+to: adrienpage2004@gmail.com
 mailer:
-  engine: sendmail
+  engine: smtp
   smtp:
-    server: localhost
-    port: 25
-    encryption: none
-    user: null
-    password: null
+    server: mail.adrienpage.com
+    port: 465
+    encryption: ssl
+    user: no-reply@adrienpage.com
+    password: 'xT8@y3m!*hqKY8B'
   sendmail:
     bin: '/usr/sbin/sendmail -bs'
 content_type: text/html
