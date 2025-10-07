@@ -31,6 +31,11 @@ header {
   letter-spacing: .05em;
 }
 
+.home-header, .home-footer, .welcome {
+  -webkit-text-stroke: .2px black;
+  text-stroke: .2px black;
+}
+
 .header-video {
   position: absolute;
   display: flex;
@@ -182,6 +187,8 @@ div#title {
 
 .welcome {
   font-size: 4rem;
+  -webkit-text-stroke: .2px black;
+  text-stroke: .2px black;
 }
 
 #menu-overlay li a {

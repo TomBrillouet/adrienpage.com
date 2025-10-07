@@ -68,7 +68,7 @@
 {% block main %}
     <main>
         {% if page.header.videos_mp4 or page.header.videos_webm %}
-            <video id="bg-video" autoplay muted loop playsinline>
+            <video id="bg-video" autoplay muted loop playsinline webkit-playsinline>
                 {% for video in page.header.videos_webm %}
                     <source src="{{ video.path }}" type="video/webm">
                 {% endfor %}
@@ -85,7 +85,7 @@
     </main>
 {% endblock %}
 {% block footer %}
-    <footer class=" fixed bottom-[0rem] flex justify-center w-full items-center min-h-[3rem]">
+    <footer class=" fixed bottom-[0rem] flex justify-center w-full items-center min-h-[3rem] home-footer">
         <div class="flex gap-[1em]">
             {% for page in pages.children %}
                 {% if page.header.footer == true %}
