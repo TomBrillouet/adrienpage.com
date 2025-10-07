@@ -31,7 +31,7 @@ header {
   letter-spacing: .05em;
 }
 
-.home-header, .home-footer, .welcome {
+.home-header, .welcome {
   -webkit-text-stroke: .2px black;
   text-stroke: .2px black;
 }
