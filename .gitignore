@@ -21,8 +21,6 @@ user/accounts/*
 !user/accounts/.*
 user/data/*
 !user/data/.*
-user/plugins/*
-!user/plugins/.*
 user/pages/*/thumbs/*
 user/pages/*/videos/*
 user/pages/*/*.md
