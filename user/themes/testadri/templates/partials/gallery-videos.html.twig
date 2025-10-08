@@ -3,8 +3,11 @@
       <template x-for="(video, index) in videos" :key="index">
         <div class="item relative">
           <img :src="Object.keys(video.thumb||{})[0]" alt="Thumbnail" class="cursor-pointer shadow hover:scale-105 transition-transform h-auto max-w-full" />
-          <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 text-white whitespace-normal p-[1rem] max-w-full opacity-0 text-4xl hover:opacity-100 transition-opacity"
-               x-text="video.title" @click="openLightbox(index)"></div>
+          <div class="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-50 text-white whitespace-normal p-[1rem] max-w-full opacity-0 hover:opacity-100 transition-opacity"
+     x-html="`<span class='text-4xl'>${video.title}</span><span class='text-lg text-gray-300 mt-2'>${video.date}</span>`"
+     @click="openLightbox(index)">
+          </div>
+
         </div>
       </template>
     </div>
@@ -25,6 +28,7 @@
         </div>
         <div class="ml-[4rem] mr-[4rem] max-w-[20rem]">
           <p class="lightbox-title" x-text="currentVideo.title"></p>
+          <p class="lightbox-date" x-text="currentVideo.date"></p>
           <p class="lightbox-desc" x-text="currentVideo.desc"></p>
         </div>
       </div>
