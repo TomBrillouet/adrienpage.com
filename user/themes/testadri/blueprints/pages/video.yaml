@@ -97,6 +97,10 @@ form:
                   type: text
                   label: Titre de la vidéo
 
+                .date:
+                  type: date
+                  label: Date
+
                 .desc:
                   type: textarea
                   label: Description de la vidéo

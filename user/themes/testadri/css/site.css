@@ -257,6 +257,10 @@ body.overflow-hidden {
   text-align: center;
 }
 
+.lightbox-date {
+  margin: 0 0 1rem 0;
+}
+
 .lightbox-desc, .contact{
   font-family: Arial, Helvetica, sans-serif;
 }
