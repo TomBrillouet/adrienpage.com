@@ -186,8 +186,6 @@ div#title {
 
 .welcome {
   font-size: 4rem;
-  -webkit-text-stroke: .2px black;
-  text-stroke: .2px black;
 }
 
 #menu-overlay li a {
