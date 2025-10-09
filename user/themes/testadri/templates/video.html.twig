@@ -81,7 +81,7 @@
   </svg>
         </div>
         {% if page.header.videos_mp4 or page.header.videos_webm %}
-            <video autoplay muted loop playsinline webkit-playsinline>
+            <video autoplay muted loop playsinline webkit-playsinline class="video-bg">
                 {% for video in page.header.videos_webm %}
                     <source src="{{ video.path }}" type="video/webm">
                 {% endfor %}
