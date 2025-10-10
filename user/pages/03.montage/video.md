@@ -16,6 +16,7 @@ galerie_3_title: 'Galerie 3 '
 videos_galery_1:
     -
         title: 'Test titre'
+        date: null
         desc: 'Test description'
         src_webm: {  }
         src_mp4:
@@ -32,6 +33,7 @@ videos_galery_1:
                 path: user/pages/03.montage/thumbs/galerie/nature-9796816_1280.jpg
     -
         title: 'autre titre'
+        date: '2025-10-24'
         desc: 'autre description'
         src_webm: {  }
         src_mp4:
@@ -49,6 +51,7 @@ videos_galery_1:
 videos_galery_2:
     -
         title: 'titre vidéo de galerie 2'
+        date: null
         desc: 'desc vidéo de galerie 2'
         src_webm: {  }
         src_mp4:
@@ -66,6 +69,7 @@ videos_galery_2:
 videos_galery_3:
     -
         title: 'titre vidéo de galerie 3'
+        date: null
         desc: 'desc vidéo de galerie 3'
         src_webm: {  }
         src_mp4:
