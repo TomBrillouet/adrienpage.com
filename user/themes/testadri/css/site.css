@@ -199,19 +199,19 @@ div#title {
   transition-delay: calc(var(--i, 0) * 120ms);
 }
 
-.main-title h1, form, .title-galery {
+.main-title h1, form, .title-galery, #lightbox-content {
   opacity: 0;
   transform: translateX(50px);
   transition: opacity .8s ease, transform .8s ease;
 }
 
-.main-title p, #contact {
+.main-title p, #contact, #lightbox-video {
   opacity: 0;
   transform: translateX(-150px);
   transition: opacity .8s ease, transform .8s ease;
 }
 
-.main-title h1.visible, .main-title p.visible, form.visible, #contact.visible, .title-galery.visible, #menu-overlay li a.visible {
+.main-title h1.visible, .main-title p.visible, form.visible, #contact.visible, .title-galery.visible, #menu-overlay li a.visible, #lightbox-video.visible, #lightbox-content.visible {
   opacity: 1;
   transform: translateX(0);
 }
