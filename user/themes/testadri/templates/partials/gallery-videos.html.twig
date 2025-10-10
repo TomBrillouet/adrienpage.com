@@ -4,7 +4,7 @@
         <div class="item relative">
           <img :src="Object.keys(video.thumb||{})[0]" alt="Thumbnail" class="cursor-pointer shadow hover:scale-105 transition-transform h-auto max-w-full" loading="lazy"/>
           <div class="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-50 text-white whitespace-normal p-[1rem] max-w-full opacity-0 hover:opacity-100 transition-opacity"
-     x-html="`<span class='text-3xl'>${video.title}</span><span class='text-lg text-gray-300 mt-2'>${video.date}</span>`"
+     x-html="`<span class='text-3xl'>${video.title}</span>${video.date ? `<span class='text-lg text-gray-300 mt-2'>${video.date}</span>` : ''}`"
      @click="openLightbox(index)">
           </div>
 
