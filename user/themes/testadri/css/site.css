@@ -31,7 +31,7 @@ header {
   letter-spacing: .05em;
 }
 
-.home-header, .welcome {
+.home-header, .header-video, .main-header, .welcome {
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
 }
 
