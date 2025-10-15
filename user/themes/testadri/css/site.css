@@ -74,18 +74,12 @@ header {
 
 }
 
-.video-base .main-title p, .main-base {
+.video-base .main-title p, .main-base, .main-photo {
     font-family: Arial, Helvetica, sans-serif;
 }
 
 .errorfont {
   font-family: 'Brunson', sans-serif;
-}
-
-.title-galery {
-  font-size: 4rem;
-  margin-top: 5rem;
-  display: inline-block;
 }
 
 div > a.logo {
@@ -136,7 +130,7 @@ nav.main-nav ul {
   border-color:#ADADAD;
 }
 
-.main-base {
+.main-base, .main-photo {
   margin: 7rem 5rem 2rem;
 }
 
@@ -216,10 +210,17 @@ div#title {
   transform: translateX(0);
 }
 
-.main-base h3 {
+.main-base , .main-photo h3 {
   font-size: 1.5rem;
   font-weight: bold;
 }
+
+h3.title-galery {
+  font-size: 4rem;
+  margin-top: 5rem;
+  display: inline-block;
+}
+
 #menu-overlay {
   position: fixed;
   top: 0;
@@ -307,7 +308,7 @@ body.overflow-hidden {
 
 @media only screen and (min-width: 321px) and (max-width: 768px){
 
-  .main-base {
+  .main-base, .main-photo {
     margin: 5rem 2rem 2rem;
   }
 

@@ -1,9 +1,28 @@
 {% extends 'partials/base.html.twig' %}
-
+{% block stylesheets %}
+        {% do assets.addCss('theme://dist/css/site' ~ extension ~ '.css', 98) %}
+        {% do assets.addCss('theme://dist/css/slick' ~ extension ~ '.css', 98) %}
+        {% do assets.addCss('theme://dist/css/slick-theme' ~ extension ~ '.css', 98) %}
+    {% endblock %}
+    {% block assets deferred %}
+        {{ assets.css()|raw }}
+        {{ assets.js()|raw }}
+        <script src="{{ url('theme://node_modules/jquery/dist/jquery.min' ~ extension ~ '.js') }}"></script>
+        <script src="{{ url('theme://js/slick.min' ~ extension ~ '.js') }}"></script>
+        <script src="{{ url('theme://js/gallery-photo' ~ extension ~ '.js') }}"></script>
+        <script type="module" src="{{ url('theme://js/main' ~ extension ~ '.js') }}"></script>
+    {% endblock %}
 {% block main %}
-        <main class="main-base">
+        <main class="main-photo">
                 <h1 class="text-5xl">{{ page.title }}</h1>
                 <div class="mt-16">{{ page.content|raw }}</div>
-                {% include 'partials/gallery-photo.html.twig' %}
+                <div class="text-center"><h3 class="title-galery">{{ header.galerie_1_title }}</h3></div>
+                {% include 'partials/gallery-photo.html.twig' with { images: header.photos_galery_1, gid: 'g1' } %} 
+                
+                <div class="text-center"><h3 class="title-galery">{{ header.galerie_2_title }}</h3></div>
+                {% include 'partials/gallery-photo.html.twig' with { images: header.photos_galery_2, gid: 'g2' } %} 
+                
+                <div class="text-center"><h3 class="title-galery">{{ header.galerie_3_title }}</h3></div>
+                {% include 'partials/gallery-photo.html.twig' with { images: header.photos_galery_3, gid: 'g3' } %}
         </main>
 {% endblock %}

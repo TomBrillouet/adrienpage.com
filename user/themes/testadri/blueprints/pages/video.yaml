@@ -54,13 +54,18 @@ form:
 
         media:
           type: tab
-          title: Galerie
+          title: Galeries
 
           fields:
-          
+
+            Galerie1:
+              type: section
+              title: Galerie 1
+              underline: true
+
             header.galerie_1_title:
               type: text
-              label: Titre affiché pour la galerie 1
+              label: Titre affiché pour la galerie
 
             header.videos_galery_1:
               name: videos_galery_1
@@ -91,7 +96,7 @@ form:
                   label: Miniature .webp
                   destination: 'self@/thumbs/galerie/'
                   accept: [ .webp, .jpg ]
-                  help: Sélectionnez une image miniature déjà présente.
+                  help: Sélectionnez une image miniature.
 
                 .title:
                   type: text
@@ -105,9 +110,14 @@ form:
                   type: textarea
                   label: Description de la vidéo
 
+            Galerie2:
+              type: section
+              title: Galerie 2
+              underline: true
+
             header.galerie_2_title:
               type: text
-              label: Titre affiché pour la galerie 2
+              label: Titre affiché pour la galerie
 
             header.videos_galery_2:
               name: videos_galery_2
@@ -118,9 +128,14 @@ form:
                 type: array
               fields: *gallery_fields
 
+            Galerie3:
+              type: section
+              title: Galerie 3
+              underline: true
+
             header.galerie_3_title:
               type: text
-              label: Titre affiché pour la galerie 3
+              label: Titre affiché pour la galerie
 
             header.videos_galery_3:
               name: videos_galery_3
