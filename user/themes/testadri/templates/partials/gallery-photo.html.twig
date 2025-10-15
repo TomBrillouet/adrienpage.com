@@ -1,0 +1,8 @@
+<div class="marquee" id="{{ gid }}">
+{% for item in images %}{% set filedata = item.image|first %}
+{% set filename = filedata.name ?? null %}
+{% if filename and page.media[filename] is defined %}
+    {% set image = page.media[filename] %}
+    <picture><img src="{{ image.url }}" alt="{{ item.title|e }}" loading="lazy" /></picture>
+{% endif %}{% endfor %}
+</div>

@@ -23,6 +23,10 @@ user/data/*
 !user/data/.*
 user/pages/*/thumbs/*
 user/pages/*/videos/*
+user/pages/*/*.jpg
+user/pages/*/*.jpeg
+user/pages/*/*.png
+user/pages/*/*.webp
 user/**/config/security.yaml
 
 # Environments
