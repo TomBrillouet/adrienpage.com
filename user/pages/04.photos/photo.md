@@ -1,9 +1,6 @@
 ---
 title: Photos
 footer: false
-galerie_1_title: 'New York'
-galerie_2_title: Paris
-galerie_3_title: Londres
 ---
 
 ### Test sous titre
