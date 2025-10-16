@@ -210,7 +210,7 @@ div#title {
   transform: translateX(0);
 }
 
-.main-base , .main-photo h3 {
+.main-photo h3 {
   font-size: 1.5rem;
   font-weight: bold;
 }
