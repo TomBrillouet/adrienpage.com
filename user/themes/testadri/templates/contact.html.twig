@@ -1,4 +1,12 @@
 {% set form = forms('contact-form') %}
+{% set montage_key = page.header.montage|keys|first %}
+{% set etalo_key = page.header.etalo|keys|first %}
+{% set photo_key = page.header.photo|keys|first %}
+{% set model_key = page.header.model|keys|first %}
+{% set montage = page.media.images[montage_key] ?? null %}
+{% set etalo = page.media.images[etalo_key] ?? null %}
+{% set photo = page.media.images[photo_key] ?? null %}
+{% set model = page.media.images[model_key] ?? null %}
 {% extends 'partials/base.html.twig' %}
 {% block main %}
 <main class="main-base overflow-x-hidden">
@@ -8,10 +16,53 @@
         </div>
     </section>
 
-    <div class="isolate px-6 py-24 sm:py-32 lg:px-8 contact">
+    <div class="isolate py-24 sm:py-32 lg:px-8 contact">
         <div aria-hidden="true" class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80 z-[-1]">
             <div style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)" class="relative left-1/2 -z-10 aspect-[1155/678] w-[36.125rem] max-w-none -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-20 sm:left-[calc(50%-40rem)] sm:w-[72.1875rem]"></div>
         </div>
+
+        <div class="presentation-grid grid mb-32">
+    <div class="grid-div1">
+        {% if montage %}
+        <img src="{{ montage.url }}" alt="Montage">
+        {% endif %}
+    </div>
+    <div class="grid-div2 mb-8">
+        <h2 class="mb-8">Montage</h2>
+        <p>{{ page.header.montagetext }}</p>
+    </div><hr class="sm:hidden">
+
+    <div class="grid-div3 mt-8">
+        <h2 class="mb-8">Étalonnage</h2>
+        <p>{{ page.header.etalotext }}</p>
+    </div>
+    <div class="grid-div4 mb-16">
+        {% if etalo %}
+        <img src="{{ etalo.url }}" alt="Étalonnage">
+        {% endif %}
+    </div><hr class="sm:hidden">
+
+    <div class="grid-div5 mt-16">
+        {% if photo %}
+        <img src="{{ photo.url }}" alt="Photographie">
+        {% endif %}
+    </div>
+    <div class="grid-div6 mb-8">
+        <h2 class="mb-8">Photographie</h2>
+        <p>{{ page.header.phototext }}</p>
+    </div><hr class="sm:hidden">
+
+    <div class="grid-div7 mt-8">
+        <h2 class="mb-8">3D</h2>
+        <p>{{ page.header.modeltext }}</p>
+    </div>
+    <div class="grid-div8">
+        {% if model %}
+        <img src="{{ model.url }}" alt="3D">
+        {% endif %}
+    </div>
+</div>
+
 
         <div id="contact" class="mx-auto max-w-2xl text-center">
             <h2 class="text-balance text-4xl font-semibold tracking-tight text-white sm:text-5xl">Contactez-moi</h2>

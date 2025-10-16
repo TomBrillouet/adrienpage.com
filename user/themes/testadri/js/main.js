@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   const items = document.querySelectorAll(
-    ".item.relative, .main-title h1, .main-title p, form, #contact, .title-galery, #menu-overlay li a"
+    ".item.relative, .main-title h1, .main-title p, form, #contact, .title-galery, #menu-overlay li a, .presentation-grid img"
   );
 
   const observer = new IntersectionObserver((entries) => {

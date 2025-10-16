@@ -205,12 +205,26 @@ div#title {
   transition: opacity .8s ease, transform .8s ease;
 }
 
+.presentation-grid img {
+  opacity: 0;
+  transition: opacity 1s ease
+}
+
+.presentation-grid img.visible {
+  opacity: 1;
+}
+
 .main-title h1.visible, .main-title p.visible, form.visible, #contact.visible, .title-galery.visible, #menu-overlay li a.visible, #lightbox-video.visible, #lightbox-content.visible {
   opacity: 1;
   transform: translateX(0);
 }
 
-.main-photo h3 {
+.main-base h2 {
+  font-size: 2.25rem;
+  font-weight: bold;
+}
+
+.main-base h3, .main-photo h3 {
   font-size: 1.5rem;
   font-weight: bold;
 }
@@ -270,6 +284,19 @@ body.overflow-hidden {
   gap: .2em;
 }
 
+.presentation-grid {
+display: grid;
+grid-template-columns: 1fr;
+grid-row-gap: 2em;
+text-align: center;
+padding: 1em;
+}
+
+.presentation-grid img {
+  max-width: 100%;
+  height: auto;
+}
+
 .item {
   display: inline-block;
   width: 100%;
@@ -304,6 +331,11 @@ body.overflow-hidden {
   .video-base h1 {
     font-size: 9rem;
   }
+  .presentation-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-row-gap: 8em;
+    column-gap: 2em;
+  }  
 }
 
 @media only screen and (min-width: 321px) and (max-width: 768px){
