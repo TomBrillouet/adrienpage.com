@@ -51,20 +51,14 @@ form:
                 reply_to: '{{ form.value.email }}'
                 to: adrienpage2004@gmail.com
                 subject: '{{ form.value.objet }} - [adrienpage.com]'
-                body: |
-                    **Un nouveau message a été envoyé depuis le site :**
-
-                    **Prénom :** {{ form.value.prenom }}
-                    **Nom :** {{ form.value.nom }}
-                    **Email :** {{ form.value.email }}
-                    **Message :**
-                    {{ form.value.message }}
+                body: "**Un nouveau message a été envoyé depuis le site :**\n\n**Prénom :** {{ form.value.prenom }}\n**Nom :** {{ form.value.nom }}\n**Email :** {{ form.value.email }}\n**Message :**\n{{ form.value.message }}\n"
                 debug: true
                 process_markdown: true
         -
             message: 'Merci pour votre message !'
         -
             reset: true
+footer: false
 ---
 
 ### Test titre
