@@ -178,6 +178,11 @@ div#title {
   letter-spacing: .1rem;
 }
 
+.main-photo h1 {
+  font-family: 'Brunson';
+  letter-spacing: .1rem;
+}
+
 .welcome {
   font-size: 4rem;
 }
