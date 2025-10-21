@@ -1,0 +1,17 @@
+version: '3.8'
+
+networks:
+  testadricom_network:
+    driver: bridge
+    
+services:
+  webserver:
+    user: "${UID:-1000}:${GID:-1000}"
+    build: .
+    ports:
+      - "${HOST_PORT:-8080}:80"
+    volumes:
+      - ../:/application/testadri.com/
+    networks:
+      - testadricom_network
+    restart: always
