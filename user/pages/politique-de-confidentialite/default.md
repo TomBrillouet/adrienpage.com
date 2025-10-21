@@ -1,10 +1,6 @@
 ---
 title: 'Politique de confidentialité'
 footer: true
-montage: {  }
-etalo: {  }
-model: {  }
-photo: {  }
 ---
 
 ### 1. Responsable du traitement
