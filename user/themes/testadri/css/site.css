@@ -162,11 +162,11 @@ footer p {
   text-align: center;
 }
 
-#legal, #privacy-policy, #presentation {
+#legal, .page-section, #presentation {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-#legal a, #privacy-policy a, #presentation a  {
+#legal a, .page-section a, #presentation a  {
   color: cyan;
 }
 
