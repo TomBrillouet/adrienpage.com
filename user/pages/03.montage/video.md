@@ -1,6 +1,6 @@
 ---
 title: Montage
-catchphrase: "Phrase d'accroche"
+catchphrase: 'Phrase d''accroche'
 footer: false
 ---
 
