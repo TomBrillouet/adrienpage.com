@@ -79,6 +79,7 @@ form:
                   type: file
                   label: Choisir une vidéo .webm
                   destination: 'self@/videos/galerie/'
+                  random_name: true
                   accept:
                     - video/webm  
                   help: Pour les performances, la vidéo en .WebM sera lue par le navigateur en priorité s'il est compatible, sinon il lira le .mp4.
@@ -87,6 +88,7 @@ form:
                   type: file
                   label: Choisir la même vidéo .mp4 (codec .h265 idéalement)
                   destination: 'self@/videos/galerie/'
+                  random_name: true
                   accept:
                     - video/mp4  
                   help: Pour les performances, la vidéo en .WebM sera lue par le navigateur en priorité s'il est compatible, sinon il lira le .mp4
@@ -95,6 +97,7 @@ form:
                   type: file
                   label: Miniature .webp
                   destination: 'self@/thumbs/galerie/'
+                  random_name: true
                   accept: [ .webp, .jpg ]
                   help: Sélectionnez une image miniature.
 
@@ -142,6 +145,24 @@ form:
               type: list
               style: vertical
               label: Galerie 3
+              validate:
+                type: array
+              fields: *gallery_fields
+
+            Galerie4:
+              type: section
+              title: Galerie 4
+              underline: true
+
+            header.galerie_4_title:
+              type: text
+              label: Titre affiché pour la galerie
+
+            header.videos_galery_4:
+              name: videos_galery_4
+              type: list
+              style: vertical
+              label: Galerie 4
               validate:
                 type: array
               fields: *gallery_fields

@@ -213,6 +213,8 @@ gpm:
   releases: stable
   official_gpm_only: true
   verify_peer: true
+updates:
+  safe_upgrade: true
 http:
   method: auto
   enable_proxy: true
