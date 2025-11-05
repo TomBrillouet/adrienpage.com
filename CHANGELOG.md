@@ -1,3 +1,21 @@
+# v1.7.50.4
+## 10/31/2025
+
+1. [](#improved)
+    * More fixes and improvements for safe-uprade process
+
+# v1.7.50.3
+## 10/21/2025
+
+1. [](#bugfix)
+    * Restored `user/config/system.yaml` to 1.7 branch version (testing mode off)
+
+# v1.7.50.2
+## 10/21/2025
+
+1. [](#bugfix)
+    * Fix for `SafeUpgradeService::getLastManifest()` fatal error on upgrade [#3966](https://github.com/getgrav/grav/issues/3966)
+
 # v1.7.50.1
 ## 10/20/2025
 
