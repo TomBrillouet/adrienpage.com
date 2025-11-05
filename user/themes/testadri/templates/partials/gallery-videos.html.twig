@@ -1,3 +1,6 @@
+{% set videos = (videos ?? [])|map(video => video|merge({
+  date: video.date ? video.date|date("m / Y") : ''
+})) %}
 <div x-data='videoGallery({{ (videos ?? []) | json_encode | raw }})' x-init="init()" class="p-6" :id="'gal-'+('{{ gid|default('') }}')">
     <div class="masonry">
       <template x-for="(video, index) in videos" :key="index">
