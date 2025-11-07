@@ -1,0 +1,28 @@
+form: flex-pages
+id: ''
+unique_id: 758418f212340e11a34e320ec2664dc1
+url: 'http://localhost:8099/admin/pages/montage'
+user:
+  username: demo
+  email: demo@demo.fr
+timestamps:
+  created: 1762520295
+  updated: 1762520312
+data: null
+files:
+  header.videos_webm:
+    'test écran accueil v1 18 secs H265.webm': null
+  header.videos_webm/original:
+    'test écran accueil v1 18 secs H265.webm': null
+  header.videos_galery_1.0.src_webm:
+    M_ACTU_CINE_SEPTEMBRE_2025_TOWEB_HD.webm: null
+  header.videos_galery_1.0.src_webm/original:
+    M_ACTU_CINE_SEPTEMBRE_2025_TOWEB_HD.webm: null
+  header.videos_galery_1.0.src_mp4:
+    M_ACTU_CINE_SEPTEMBRE_2025_TOWEB_HD.mp4: null
+  header.videos_galery_1.0.src_mp4/original:
+    M_ACTU_CINE_SEPTEMBRE_2025_TOWEB_HD.mp4: null
+  header.videos_galery_1.0.thumb:
+    'M ACTU CINE SEPTEMBRE 2025_1.webp': null
+  header.videos_galery_1.0.thumb/original:
+    'M ACTU CINE SEPTEMBRE 2025_1.webp': null
