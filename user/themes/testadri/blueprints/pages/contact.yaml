@@ -35,6 +35,18 @@ form:
                 validate:
                   type: textarea
 
+            header.profile:
+              type: file
+              label: Photo de profil
+              multiple: false
+              accept: [ .webp, .jpg, .png, .svg ]
+            
+            header.profiletext:
+              type: markdown
+              label: Texte de profil
+              validate:
+                type: textarea
+            
             header.montage:
               type: file
               label: Image montage
