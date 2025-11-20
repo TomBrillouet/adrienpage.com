@@ -1,8 +1,10 @@
 {% set form = forms('contact-form') %}
+{% set profile_key = page.header.profile|keys|first %}
 {% set montage_key = page.header.montage|keys|first %}
 {% set etalo_key = page.header.etalo|keys|first %}
 {% set photo_key = page.header.photo|keys|first %}
 {% set model_key = page.header.model|keys|first %}
+{% set profile = page.media.images[profile_key] ?? null %}
 {% set montage = page.media.images[montage_key] ?? null %}
 {% set etalo = page.media.images[etalo_key] ?? null %}
 {% set photo = page.media.images[photo_key] ?? null %}
@@ -22,7 +24,18 @@
         </div>
 
         <div class="presentation-grid grid mb-32">
-    <div class="grid-div1">
+    
+            <div class="grid-div4 mb-16">
+                <h2 class="mb-8">À propos de moi</h2>
+                <p>{{ page.header.profiletext }}</p>
+            </div>
+            <div class="grid-div3 mt-8">
+                {% if profile %}
+                <img src="{{ profile.url }}" alt="Photo de profil">
+                {% endif %}
+            </div><hr class="sm:hidden">
+    
+    <div class="grid-div1 mt-16">
         {% if montage %}
         <img src="{{ montage.url }}" alt="Montage">
         {% endif %}

@@ -59,6 +59,11 @@ form:
         -
             reset: true
 footer: false
+profile: {  }
+montage: {  }
+etalo: {  }
+model: {  }
+photo: {  }
 ---
 
 ### Test titre
